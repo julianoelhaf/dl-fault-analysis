@@ -1,0 +1,29 @@
+{
+  "audits_passed": true,
+  "per_model": {
+    "cnn_lstm_regressor": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    },
+    "cnn_lstm_regressor__full_line_conditioned": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    },
+    "gru_regressor": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    },
+    "gru_regressor__full_line_conditioned": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    },
+    "inceptiontime_regressor": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    },
+    "inceptiontime_regressor__full_line_conditioned": {
+      "normalization_audit.json": true,
+      "split_audit.json": true
+    }
+  }
+}

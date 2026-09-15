@@ -1,0 +1,50 @@
+# EPSR reviewer-response §: minimal test-time communication-perturbation
+# experiment. Manuscript Section 3.6 / Table 9. GRU only, FULL observability,
+# 50 ms; perturb TEST inputs only, NO retraining. Ported from the private
+# development repository's EPSR reviewer-response branch -- see
+# docs/PROVENANCE.md.
+perturbation_experiment:
+  name: minimal_communication_perturbation_fl_50ms
+  enabled: true
+  task: fl
+  topology: hv_double_line_90kv   # PROTECT-90
+  window_ms: 50
+  target_label: y_fault_location
+
+  model: gru_regressor            # GRU only
+  observability: full             # centralized 8-relay baseline
+
+  perturbations:                  # applied to test inputs only; no retraining
+    - none
+    - time_shift_2_samples
+    - block_loss_10ms
+
+  interpretation:
+    line_conditioned: false
+    uses_faulted_line_for_input_selection: false
+    deployment_interpretation: centralized_full_observability_test_time_perturbation
+
+  splitting:
+    split_source: existing_episode_folds
+    group_key: sample_id
+    n_folds: 5
+    inner_val_fraction: 0.15
+
+  normalization:
+    fit_on: train_only            # per-window stateless scaling (leakage-free)
+
+  training:
+    epochs: 500
+    patience: 15
+    batch_size: 256
+    learning_rate: 0.0001
+    weight_decay: 0.0001
+    num_workers: 4
+
+  reproducibility:
+    seed: 42
+    deterministic: true
+
+  outputs:
+    out_root: results/paper
+    save_predictions: true

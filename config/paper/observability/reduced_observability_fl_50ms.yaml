@@ -1,0 +1,69 @@
+# EPSR reviewer-response experiment: reduced-observability fault localization
+# (50 ms). Manuscript Section 3.5 / Table 8. Standalone config consumed by
+# scripts/run_revision_observability.py. Ported from the private development
+# repository's EPSR reviewer-response branch -- see docs/PROVENANCE.md.
+revision_experiment:
+  name: reduced_observability_fl_50ms
+  enabled: true
+  task: fl                      # fault localization (regression on y_fault_location)
+  topology: hv_double_line_90kv # PROTECT-90
+  window_ms: 50                 # 0.05 s
+  target_label: y_fault_location
+
+  models:
+    - gru_regressor
+    - cnn_lstm_regressor
+    - inceptiontime_regressor
+    # - tft_regressor           # optional; enable only if cheap
+
+  observability:
+    modes:                      # which sensing regimes to evaluate
+      - full                    # all 8 measurement points, ONE global model (centralized baseline)
+      - full_line_conditioned   # all 8 relays, PER-LINE model (control: isolates per-line modelling)
+      - terminal_pair           # 2 terminals of the faulted line (line-conditioned)
+      - single_ended            # 1 terminal of the faulted line (line-conditioned)
+    single_ended_sides:         # evaluate both terminals; report mean + worst side
+      - a                       # from-bus end
+      - b                       # to-bus end
+    # Per-line models for the line-conditioned modes.
+    strategy: per_line_model
+
+  # Declared interpretation carried into every line-conditioned output.
+  interpretation:
+    line_conditioned: true
+    uses_faulted_line_for_input_selection: true
+    deployment_interpretation: conditional_on_fault_line_identification
+
+  splitting:
+    split_source: existing_episode_folds
+    group_key: sample_id        # episode id column
+    n_folds: 5
+    inner_val_fraction: 0.15
+
+  normalization:
+    fit_on: train_only          # per-window stateless scaling (leakage-free by construction)
+
+  training:
+    epochs: 500
+    patience: 15
+    batch_size: 256
+    learning_rate: 0.0001
+    weight_decay: 0.0001
+    num_workers: 4
+
+  reproducibility:
+    seed: 42
+    deterministic: true
+    save_git_commit: true
+    save_config: true
+    save_dataset_hash: true
+
+  outputs:
+    out_root: results/paper
+    save_predictions: true
+    save_checkpoints: true     # save per-fold models for reuse (eval-only perturbation, resume)
+    save_fold_metrics: true
+    save_aggregate_metrics: true
+    save_split_audit: true
+    save_table_csv: true
+    save_table_latex: true

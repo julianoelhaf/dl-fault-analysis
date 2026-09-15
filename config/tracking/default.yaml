@@ -1,0 +1,5 @@
+# Experiment tracking (Weights & Biases)
+use_wandb: False # Set to True to enable Weights & Biases tracking
+project: "your_wandb_project_name"
+entity: "your_wandb_username_or_team"
+mode: "online"  # online|offline|disabled

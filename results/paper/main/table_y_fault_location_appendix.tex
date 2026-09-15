@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Fault localization across decision windows (appendix metrics, MAE, RMSE, and P90 in \% of line length).}
+\label{tab:fl_app}
+\begin{tabular}{lcccccccccccccccccccc}
+\toprule
+\textbf{Model} & \multicolumn{4}{c}{\textbf{10 ms}} & \multicolumn{4}{c}{\textbf{20 ms}} & \multicolumn{4}{c}{\textbf{30 ms}} & \multicolumn{4}{c}{\textbf{40 ms}} & \multicolumn{4}{c}{\textbf{50 ms}} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}\cmidrule(lr){14-17}\cmidrule(lr){18-21}
+  & \textbf{MAE} & \textbf{RMSE} & \textbf{$R\textasciicircum{}2$} & \textbf{P90} & \textbf{MAE} & \textbf{RMSE} & \textbf{$R\textasciicircum{}2$} & \textbf{P90} & \textbf{MAE} & \textbf{RMSE} & \textbf{$R\textasciicircum{}2$} & \textbf{P90} & \textbf{MAE} & \textbf{RMSE} & \textbf{$R\textasciicircum{}2$} & \textbf{P90} & \textbf{MAE} & \textbf{RMSE} & \textbf{$R\textasciicircum{}2$} & \textbf{P90} \\
+\midrule
+GRU & \mstd{12.858}{0.304} & \mstd{17.000}{0.564} & -- & -- & \textbf{\mstd{8.828}{0.228}} & \textbf{\mstd{11.931}{0.321}} & -- & -- & \textbf{\mstd{7.860}{0.209}} & \textbf{\mstd{10.856}{0.354}} & -- & -- & \textbf{\mstd{7.892}{0.255}} & \textbf{\mstd{10.967}{0.274}} & -- & -- & \textbf{\mstd{7.569}{0.226}} & \textbf{\mstd{10.569}{0.324}} & -- & -- \\
+InceptionTime & \textbf{\mstd{11.190}{0.829}} & \textbf{\mstd{14.688}{0.835}} & -- & -- & \mstd{9.542}{0.227} & \mstd{12.850}{0.390} & -- & -- & \mstd{9.170}{0.289} & \mstd{12.465}{0.419} & -- & -- & \mstd{8.892}{0.304} & \mstd{12.149}{0.428} & -- & -- & \mstd{8.685}{0.320} & \mstd{11.900}{0.428} & -- & -- \\
+LSTM & \mstd{12.513}{0.670} & \mstd{16.426}{0.768} & -- & -- & \mstd{10.386}{0.413} & \mstd{14.186}{0.610} & -- & -- & \mstd{9.550}{0.249} & \mstd{13.361}{0.274} & -- & -- & \mstd{9.909}{1.264} & \mstd{13.646}{1.326} & -- & -- & \mstd{9.377}{0.374} & \mstd{13.097}{0.470} & -- & -- \\
+CNN--LSTM & \mstd{13.091}{0.756} & \mstd{17.203}{0.586} & -- & -- & \mstd{12.361}{0.983} & \mstd{16.265}{1.048} & -- & -- & \mstd{10.332}{0.516} & \mstd{14.271}{0.754} & -- & -- & \mstd{10.099}{1.693} & \mstd{13.740}{1.781} & -- & -- & \mstd{10.167}{2.420} & \mstd{13.819}{2.817} & -- & -- \\
+TFT & \mstd{15.712}{0.763} & \mstd{19.864}{0.888} & -- & -- & \mstd{15.500}{5.363} & \mstd{19.699}{5.178} & -- & -- & \mstd{11.126}{0.586} & \mstd{15.179}{0.907} & -- & -- & \mstd{10.064}{0.502} & \mstd{13.919}{0.620} & -- & -- & \mstd{8.297}{0.654} & \mstd{11.789}{0.815} & -- & -- \\
+Dilated CNN & \mstd{15.484}{0.727} & \mstd{19.509}{0.801} & -- & -- & \mstd{12.550}{0.353} & \mstd{16.156}{0.390} & -- & -- & \mstd{12.353}{0.471} & \mstd{15.900}{0.552} & -- & -- & \mstd{12.113}{0.105} & \mstd{15.676}{0.182} & -- & -- & \mstd{12.363}{0.264} & \mstd{15.993}{0.279} & -- & -- \\
+RNN & \mstd{15.315}{0.418} & \mstd{19.874}{0.763} & -- & -- & \mstd{14.093}{0.417} & \mstd{18.233}{0.349} & -- & -- & \mstd{13.702}{1.087} & \mstd{17.769}{1.171} & -- & -- & \mstd{13.617}{0.255} & \mstd{17.716}{0.337} & -- & -- & \mstd{13.563}{0.431} & \mstd{17.794}{0.543} & -- & -- \\
+TCN & \mstd{17.108}{0.443} & \mstd{21.916}{0.472} & -- & -- & \mstd{14.520}{0.449} & \mstd{19.280}{0.470} & -- & -- & \mstd{13.541}{0.385} & \mstd{18.141}{0.456} & -- & -- & \mstd{13.574}{0.305} & \mstd{18.198}{0.396} & -- & -- & \mstd{13.183}{0.267} & \mstd{17.844}{0.396} & -- & -- \\
+CNN & \mstd{17.672}{0.458} & \mstd{21.751}{0.521} & -- & -- & \mstd{16.019}{0.687} & \mstd{19.963}{0.758} & -- & -- & \mstd{15.775}{0.788} & \mstd{19.759}{0.854} & -- & -- & \mstd{15.015}{0.299} & \mstd{19.033}{0.388} & -- & -- & \mstd{14.965}{0.370} & \mstd{19.009}{0.403} & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}

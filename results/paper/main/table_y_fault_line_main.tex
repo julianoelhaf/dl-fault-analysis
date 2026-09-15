@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Fault line identification across decision windows (macro-F1 and macro-PR-AUC; mean$\pm$std over 5 folds).}
+\label{tab:fli_main}
+\begin{tabular}{lcccccccccc}
+\toprule
+\textbf{Model} & \multicolumn{2}{c}{\textbf{10 ms}} & \multicolumn{2}{c}{\textbf{20 ms}} & \multicolumn{2}{c}{\textbf{30 ms}} & \multicolumn{2}{c}{\textbf{40 ms}} & \multicolumn{2}{c}{\textbf{50 ms}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+  & \textbf{F1} & \textbf{PR-AUC} & \textbf{F1} & \textbf{PR-AUC} & \textbf{F1} & \textbf{PR-AUC} & \textbf{F1} & \textbf{PR-AUC} & \textbf{F1} & \textbf{PR-AUC} \\
+\midrule
+GRU & \textbf{\mstd{0.980}{0.010}} & \textbf{\mstd{0.998}{0.001}} & \mstd{0.986}{0.005} & \mstd{0.999}{0.001} & \mstd{0.995}{0.002} & \mstd{0.999}{0.000} & \mstd{0.995}{0.003} & \mstd{0.999}{0.000} & \mstd{0.994}{0.006} & \mstd{0.999}{0.001} \\
+InceptionTime & \mstd{0.968}{0.015} & \mstd{0.995}{0.005} & \textbf{\mstd{0.993}{0.003}} & \textbf{\mstd{0.999}{0.000}} & \mstd{0.994}{0.007} & \mstd{0.999}{0.001} & \textbf{\mstd{0.997}{0.002}} & \textbf{\mstd{0.999}{0.000}} & \mstd{0.995}{0.003} & \mstd{0.999}{0.000} \\
+TFT & \mstd{0.928}{0.015} & \mstd{0.977}{0.009} & \mstd{0.989}{0.003} & \mstd{0.999}{0.000} & \textbf{\mstd{0.996}{0.001}} & \textbf{\mstd{0.999}{0.000}} & \mstd{0.994}{0.002} & \mstd{0.999}{0.000} & \mstd{0.996}{0.002} & \textbf{\mstd{0.999}{0.000}} \\
+CNN--LSTM & \mstd{0.938}{0.014} & \mstd{0.986}{0.005} & \mstd{0.982}{0.003} & \mstd{0.999}{0.001} & \mstd{0.985}{0.005} & \mstd{0.999}{0.000} & \mstd{0.995}{0.002} & \mstd{0.999}{0.000} & \mstd{0.992}{0.006} & \mstd{0.999}{0.001} \\
+CNN & \mstd{0.952}{0.021} & \mstd{0.990}{0.008} & \mstd{0.970}{0.009} & \mstd{0.997}{0.002} & \mstd{0.976}{0.003} & \mstd{0.998}{0.001} & \mstd{0.980}{0.004} & \mstd{0.998}{0.001} & \mstd{0.982}{0.006} & \mstd{0.998}{0.001} \\
+LSTM & \mstd{0.968}{0.009} & \mstd{0.996}{0.002} & \mstd{0.992}{0.003} & \mstd{0.999}{0.000} & \mstd{0.989}{0.013} & \mstd{0.999}{0.002} & \mstd{0.873}{0.167} & \mstd{0.901}{0.136} & \textbf{\mstd{0.996}{0.002}} & \mstd{0.999}{0.000} \\
+TCN & \mstd{0.933}{0.013} & \mstd{0.986}{0.004} & \mstd{0.975}{0.004} & \mstd{0.998}{0.001} & \mstd{0.972}{0.003} & \mstd{0.997}{0.001} & \mstd{0.970}{0.004} & \mstd{0.997}{0.001} & \mstd{0.964}{0.002} & \mstd{0.995}{0.000} \\
+Dilated CNN & \mstd{0.916}{0.025} & \mstd{0.975}{0.014} & \mstd{0.968}{0.011} & \mstd{0.997}{0.002} & \mstd{0.976}{0.007} & \mstd{0.998}{0.001} & \mstd{0.964}{0.012} & \mstd{0.996}{0.002} & \mstd{0.967}{0.019} & \mstd{0.996}{0.004} \\
+RNN & \mstd{0.972}{0.012} & \mstd{0.994}{0.005} & \mstd{0.936}{0.015} & \mstd{0.963}{0.013} & \mstd{0.870}{0.114} & \mstd{0.923}{0.074} & \mstd{0.744}{0.256} & \mstd{0.791}{0.238} & \mstd{0.821}{0.068} & \mstd{0.869}{0.057} \\
+\bottomrule
+\end{tabular}
+\end{table*}

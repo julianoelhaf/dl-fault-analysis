@@ -1,0 +1,11 @@
+% MAE in % of line length (mean ± std across CV folds / per-line models)
+\begin{tabular}{lrrrr}
+\toprule
+observability & relays & cnn\_lstm\_regressor\_mae & gru\_regressor\_mae & inceptiontime\_regressor\_mae \\
+\midrule
+full & 8 & 10.70 $\pm$ 2.42 & 7.94 $\pm$ 0.52 & 9.89 $\pm$ 0.24 \\
+full\_line\_conditioned & 8 & 10.69 $\pm$ 0.78 & 9.51 $\pm$ 1.59 & 8.91 $\pm$ 0.78 \\
+terminal\_pair & 2 & 10.46 $\pm$ 1.32 & 9.14 $\pm$ 4.48 & 8.26 $\pm$ 0.80 \\
+single\_ended & 1 & 18.67 $\pm$ 0.70 & 18.64 $\pm$ 1.33 & 16.93 $\pm$ 0.69 \\
+\bottomrule
+\end{tabular}

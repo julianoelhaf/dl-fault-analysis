@@ -1,0 +1,5 @@
+step_length_seconds: 0.005
+period_of_interest: 0.080
+window_length: 0.010
+windows_directory: "windows"
+windows_local_dir: "windows_tmp"

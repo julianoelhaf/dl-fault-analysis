@@ -1,0 +1,2 @@
+sha256(manifest)=1ab9e1a8bd819dd0af3cc358b6eae07698fb09b276b5325f4066c4d7545bf9be
+<redacted-internal-scratch-path>/X_hv_double_line_90kv_W0p050_S0p005.raw.manifest.json

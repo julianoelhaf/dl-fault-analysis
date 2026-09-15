@@ -1,0 +1,42 @@
+{
+  "perturbation_experiment": {
+    "name": "minimal_communication_perturbation_fl_50ms",
+    "target_label": "y_fault_location",
+    "model": "gru_regressor",
+    "perturbations": [
+      "none",
+      "time_shift_2_samples",
+      "block_loss_10ms"
+    ],
+    "n_folds": 5,
+    "inner_val_fraction": 0.15,
+    "seed": 42,
+    "epochs": 500,
+    "patience": 15,
+    "batch_size": 256,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "num_workers": 4,
+    "save_predictions": true,
+    "out_root": "results/revision"
+  },
+  "env": {
+    "timestamp": "2026-06-16T10:42:05.846745Z",
+    "python_version": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-151-generic-x86_64-with-glibc2.35",
+    "hostname": "lme222",
+    "torch_version": "2.8.0+cu128",
+    "numpy_version": "2.3.3",
+    "sklearn_version": "1.7.2",
+    "pandas_version": "2.3.3",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "cudnn_version": 91002,
+    "git_commit": "ce594c6169f001c7a283590da014ce83f1a0328a",
+    "git_status": "dirty"
+  },
+  "dataset": {
+    "topology": "hv_double_line_90kv",
+    "window_length": 0.05
+  }
+}

@@ -1,0 +1,65 @@
+# ===========================
+# General Training Configuration
+# ===========================
+n_splits: 5
+
+stratify: True
+
+# ===========================
+# Task-Specific Settings
+# ===========================
+fault_target: "fault"
+target_label: y_fault_present # options: y_fault_present, y_event_present
+
+val_size: 0.15
+test_size: 0.15
+split_seed: 42
+
+batch_size: 256
+learning_rate: 0.0001
+epochs: 500
+weight_decay: 0.0001
+binary_threshold: 0.5
+patience: 15 # early stopping patience (number of epochs without improvement)
+
+# The CV runner only ever consumes seeds[0] (see run_dl_experiment.py); the
+# published protocol uses a single fixed seed, so only one is listed here.
+seeds: [42]
+
+num_workers: 4
+prefetch_factor: 2
+pin_memory: True
+
+# ===========================
+# Feature Filtering
+# ===========================
+feature_groups_include: ["lines", "loads", "winds", "extgrid"]
+materialize_feature_filters: false
+
+# artifacts
+save_best_per_fold: True
+artifacts_dir: "artifacts_tmp"
+
+#
+row_index_col: null
+
+# ===========================
+# Evaluation Only
+# ===========================
+
+eval_only: false
+
+ckpt_dir: "outputs/checkpoints"
+
+ckpt_path: "" #(optional override if you want a single file)
+
+# ===========================
+# Hyperparameter Tuning
+# ===========================
+tune_lr_wd: true
+lr_grid: [0.01, 0.001, 0.0001]
+wd_grid: [0.01, 0.001, 0.0001]
+tune_cache_dir: "outputs/tuning" # directory for caching tuning results
+calib_fold: 0 # fold index used for hyperparameter calibration (0-4 for 5-fold CV)
+tune_subsample_ratio: null # optional: subsample training set during tuning (0.0-1.0)
+tune_max_epochs: null # optional: max epochs during tuning (overrides main epochs)

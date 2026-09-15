@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated publication."
+title: "Deep Learning Architectures for Fault Analysis in Power System Protection: A Reproducible Evaluation on Public Waveform Data"
+type: software
+authors:
+  - family-names: Oelhaf
+    given-names: Julian
+    affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
+  - family-names: Kordowich
+    given-names: Georg
+    affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
+  - family-names: Bergler
+    given-names: Christian
+    affiliation: OTH Amberg-Weiden
+  - family-names: Maier
+    given-names: Andreas
+    affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
+  - family-names: Jäger
+    given-names: Johann
+    affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
+  - family-names: Bayer
+    given-names: Siming
+    affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
+
+repository-code: "https://github.com/julianoelhaf/dl-fault-analysis"
+version: "1.0.0"
+date-released: "2026-09-15"
+
+keywords:
+  - deep learning
+  - power system protection
+  - fault detection
+  - fault classification
+  - fault localization
+  - EMT simulation
+  - transmission systems
+
+license: MIT
+
+preferred-citation:
+  type: article
+  title: "Deep Learning Architectures for Fault Analysis in Power System Protection: A Reproducible Evaluation on Public Waveform Data"
+  authors:
+    - family-names: Oelhaf
+      given-names: Julian
+    - family-names: Kordowich
+      given-names: Georg
+    - family-names: Bergler
+      given-names: Christian
+    - family-names: Maier
+      given-names: Andreas
+    - family-names: Jäger
+      given-names: Johann
+    - family-names: Bayer
+      given-names: Siming
+  journal: "Electric Power Systems Research"
+  year: 2027
+  volume: "265"
+  article-number: "114169"
+  doi: "10.1016/j.epsr.2026.114169"

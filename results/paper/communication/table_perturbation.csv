@@ -1,0 +1,4 @@
+perturbation,gru_regressor_mae
+none,8.34 ± 0.55
+time_shift_2_samples,8.39 ± 0.55
+block_loss_10ms,18.24 ± 0.93

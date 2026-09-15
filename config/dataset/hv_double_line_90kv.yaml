@@ -1,0 +1,33 @@
+# === General metadata ===
+topology: "hv_double_line_90kv"
+data_directory: "data"
+dataset_directory: <your_dataset_directory>
+tmp_data_directory: ""
+windows_local_dir: "windows_tmp"
+data_samples_foldername: "all"
+labels_filename: "labels.csv"
+index_col: "rep_id"
+
+# === Sampling & timing ===
+sampling_frequency: 6_400 # Hz
+frequency: 50 # system frequency (Hz)
+duration: 1 # seconds
+multiple_of: 6
+additional: 1
+samples: 9150
+expected_startime: -0.1 # seconds before event; PowerFactory default: -0.1s
+
+# === Timestamp (time) column ===
+time_top_label: "ResultsRepl" # top-level header for time
+expected_name: "Zeitpunkt in s" # sub-header name for time
+event_start_column: "t_evnt_start"
+
+# === Feeder & subcolumn structure ===
+feeder_regex: "^(?P<cub_type>Cub|Feld)_(?P<cub_id>\\d+)\\\\Bus(?P<bus_id>\\d+)(?:(?P<elem_block>(?:(?P<elem_type>Ext_Grid|Load)?_(?P<elem_idx>\\d+))|(?:Line_(?P<line_from>\\d+)_(?P<line_to>\\d+)_(?P<line_suffix>[a-z]))))_ai_exp_ct_vt(?:\\.(?P<dup>\\d+))?$"
+sub_regex: "^Sekundär(?P<quantity_type>strom|spannung)\\sL(?P<phase>[123])\\sin\\s(?P<unit>A|V)$"
+
+# === CSV / file parsing ===
+seperator: ";"
+decimal: ","
+encoding: "latin-1"
+file_ending: ".txt"

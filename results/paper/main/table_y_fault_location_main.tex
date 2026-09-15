@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Fault localization across decision windows (MAE and RMSE in \% of line length; mean$\pm$std over 5 folds).}
+\label{tab:fl_main}
+\begin{tabular}{lcccccccccc}
+\toprule
+\textbf{Model} & \multicolumn{2}{c}{\textbf{10 ms}} & \multicolumn{2}{c}{\textbf{20 ms}} & \multicolumn{2}{c}{\textbf{30 ms}} & \multicolumn{2}{c}{\textbf{40 ms}} & \multicolumn{2}{c}{\textbf{50 ms}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+  & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} \\
+\midrule
+GRU & \mstd{12.86}{0.30} & \mstd{17.00}{0.56} & \textbf{\mstd{8.83}{0.23}} & \textbf{\mstd{11.93}{0.32}} & \textbf{\mstd{7.86}{0.21}} & \textbf{\mstd{10.86}{0.35}} & \textbf{\mstd{7.89}{0.26}} & \textbf{\mstd{10.97}{0.27}} & \textbf{\mstd{7.57}{0.23}} & \textbf{\mstd{10.57}{0.32}} \\
+InceptionTime & \textbf{\mstd{11.19}{0.83}} & \textbf{\mstd{14.69}{0.84}} & \mstd{9.54}{0.23} & \mstd{12.85}{0.39} & \mstd{9.17}{0.29} & \mstd{12.47}{0.42} & \mstd{8.89}{0.30} & \mstd{12.15}{0.43} & \mstd{8.69}{0.32} & \mstd{11.90}{0.43} \\
+LSTM & \mstd{12.51}{0.67} & \mstd{16.43}{0.77} & \mstd{10.39}{0.41} & \mstd{14.19}{0.61} & \mstd{9.55}{0.25} & \mstd{13.36}{0.27} & \mstd{9.91}{1.26} & \mstd{13.65}{1.33} & \mstd{9.38}{0.37} & \mstd{13.10}{0.47} \\
+CNN--LSTM & \mstd{13.09}{0.76} & \mstd{17.20}{0.59} & \mstd{12.36}{0.98} & \mstd{16.27}{1.05} & \mstd{10.33}{0.52} & \mstd{14.27}{0.75} & \mstd{10.10}{1.69} & \mstd{13.74}{1.78} & \mstd{10.17}{2.42} & \mstd{13.82}{2.82} \\
+TFT & \mstd{15.71}{0.76} & \mstd{19.86}{0.89} & \mstd{15.50}{5.36} & \mstd{19.70}{5.18} & \mstd{11.13}{0.59} & \mstd{15.18}{0.91} & \mstd{10.06}{0.50} & \mstd{13.92}{0.62} & \mstd{8.30}{0.65} & \mstd{11.79}{0.82} \\
+Dilated CNN & \mstd{15.48}{0.73} & \mstd{19.51}{0.80} & \mstd{12.55}{0.35} & \mstd{16.16}{0.39} & \mstd{12.35}{0.47} & \mstd{15.90}{0.55} & \mstd{12.11}{0.11} & \mstd{15.68}{0.18} & \mstd{12.36}{0.26} & \mstd{15.99}{0.28} \\
+RNN & \mstd{15.31}{0.42} & \mstd{19.87}{0.76} & \mstd{14.09}{0.42} & \mstd{18.23}{0.35} & \mstd{13.70}{1.09} & \mstd{17.77}{1.17} & \mstd{13.62}{0.26} & \mstd{17.72}{0.34} & \mstd{13.56}{0.43} & \mstd{17.79}{0.54} \\
+TCN & \mstd{17.11}{0.44} & \mstd{21.92}{0.47} & \mstd{14.52}{0.45} & \mstd{19.28}{0.47} & \mstd{13.54}{0.38} & \mstd{18.14}{0.46} & \mstd{13.57}{0.31} & \mstd{18.20}{0.40} & \mstd{13.18}{0.27} & \mstd{17.84}{0.40} \\
+CNN & \mstd{17.67}{0.46} & \mstd{21.75}{0.52} & \mstd{16.02}{0.69} & \mstd{19.96}{0.76} & \mstd{15.78}{0.79} & \mstd{19.76}{0.85} & \mstd{15.02}{0.30} & \mstd{19.03}{0.39} & \mstd{14.96}{0.37} & \mstd{19.01}{0.40} \\
+\bottomrule
+\end{tabular}
+\end{table*}

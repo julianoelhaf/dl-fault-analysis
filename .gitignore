@@ -1,0 +1,22 @@
+# Envs & caches
+.venv/
+.env
+__pycache__/
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+
+# Data & generated results (keep out of git) -- except the curated,
+# archived publication results under results/paper/, which are committed.
+/data/
+results/*
+!results/paper/
+
+# Artifacts & logs
+*.pt
+*.pth
+*.npz
+*.npy
+logs/
+mlruns/
+wandb/

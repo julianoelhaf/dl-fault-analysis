@@ -1,0 +1,5 @@
+# Optional per-run subgroup analysis (see utils/subgroup_metrics.py). Off by
+# default, matching the vendored AnalysisConfig default (see config.py) --
+# this group did not previously exist in this repo's config tree, which made
+# `config.analysis.run_subgroup` (run_dl_experiment.py) fail at runtime.
+run_subgroup: false

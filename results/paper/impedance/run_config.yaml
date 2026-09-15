@@ -1,0 +1,13 @@
+# NOTE: base_dir/csv_path below are redacted from the original archived
+# artifact, which recorded a personal HPC cluster path
+# (/cluster/<username>/Datasets/PROTECT-90/...). The scientific
+# configuration (stem, f0_hz, samples_per_cycle) and all result values in
+# this directory are unchanged from the original. See
+# results/paper/impedance/PROVENANCE.md for the original file's checksum.
+base_dir: <redacted-personal-cluster-path>/PROTECT-90/windows/PROTECT-90
+stem: X_hv_double_line_90kv_W0p050_S0p005
+csv_path: <redacted-personal-cluster-path>/PROTECT-90/hv_double_line_90kv_labels.csv
+out_dir: results/revision/impedance_baseline_fl_50ms
+f0_hz: 50.0
+f0_hz: 50.0
+samples_per_cycle: 128
